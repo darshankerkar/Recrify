@@ -111,18 +111,6 @@ export default function CandidateProfileModal({ isOpen, onClose, candidate }) {
     }
   };
 
-  // Handle view resume in new tab
-  const handleViewResume = () => {
-    if (!resume?.view_url) {
-      alert('Resume file not available. Please contact support.');
-      return;
-    }
-
-    const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
-    const viewUrl = `${apiBaseUrl}${resume.view_url}`;
-    window.open(viewUrl, '_blank');
-  };
-
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -258,22 +246,7 @@ export default function CandidateProfileModal({ isOpen, onClose, candidate }) {
               </div>
             )}
 
-            {/* Resume File */}
-            {resume?.file && (
-              <div className="bg-dark rounded-xl border border-gray-800 p-6">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-primary" />
-                  Resume Document
-                </h3>
-                <button
-                  onClick={handleViewResume}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg text-primary transition-colors cursor-pointer"
-                >
-                  <FileText className="h-4 w-4" />
-                  View Full Resume
-                </button>
-              </div>
-            )}
+
           </div>
 
           {/* Footer */}
