@@ -284,7 +284,6 @@ const BulkUpload = () => {
             </div>
           </section>
         )}
-      </div>
     </div>
   );
 };
