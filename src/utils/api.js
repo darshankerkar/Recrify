@@ -66,7 +66,7 @@ api.interceptors.response.use(
       }
 
       try {
-        const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+        const backendUrl = import.meta.env.VITE_API_URL || '/api';
         const baseUrl = backendUrl.replace(/\/api\/?$/, ''); // strip /api if present for safety
 
         const response = await axios.post(`${baseUrl}/api/auth/token/refresh/`, {
@@ -109,3 +109,4 @@ api.interceptors.response.use(
 );
 
 export default api;
+

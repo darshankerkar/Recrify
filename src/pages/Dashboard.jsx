@@ -4,6 +4,7 @@ import { Briefcase, Users, TrendingUp, Activity, Plus, FileText, ArrowUpRight, A
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/api';
+import { usePreloadedData } from '../contexts/DataPreloadContext';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,6 +27,7 @@ const itemVariants = {
 
 export default function Dashboard() {
   const { currentUser } = useAuth();
+  const preloaded = usePreloadedData();
   const [stats, setStats] = useState({
     activeJobs: 0,
     totalCandidates: 0,
@@ -40,12 +42,34 @@ export default function Dashboard() {
   const [recentCandidates, setRecentCandidates] = useState([]);
   const [recentJobs, setRecentJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const storedUserData = JSON.parse(localStorage.getItem('userData') || '{}');
+  const recruiterEmail = currentUser?.email || storedUserData?.email || ''; 
 
   useEffect(() => {
-    if (currentUser) {
-      fetchStats();
+    if (preloaded?.recruiterStats) {
+      const data = preloaded.recruiterStats;
+      setStats(prev => ({
+        ...prev,
+        activeJobs: data.total_jobs || 0,
+        totalCandidates: data.total_candidates || 0,
+        avgMatchRate: data.avg_score || 0
+      }));
     }
-  }, [currentUser]);
+
+    if (Array.isArray(preloaded?.jobs) && recruiterEmail) {
+      const userJobs = preloaded.jobs.filter(job => job.posted_by_email === recruiterEmail);
+      const sortedJobs = [...userJobs].sort((a, b) => b.id - a.id).slice(0, 3);
+      setRecentJobs(sortedJobs);
+    }
+  }, [preloaded?.recruiterStats, preloaded?.jobs, recruiterEmail]);
+
+  useEffect(() => {
+    if (recruiterEmail) {
+      fetchStats();
+    } else {
+      setLoading(false);
+    }
+  }, [recruiterEmail]);
 
   const fetchStats = async () => {
     try {
@@ -57,7 +81,7 @@ export default function Dashboard() {
       // Strict filtering: Only show jobs posted by current user
       const allJobs = jobsRes.data;
       const userJobs = allJobs.filter(job => 
-        job.posted_by_email === currentUser?.email
+        job.posted_by_email === recruiterEmail
       );
       
       // Get candidates only for user's jobs

@@ -18,7 +18,7 @@ const InterviewRoom = () => {
   const fetchInterviewDetails = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/api\/?$/, '');
+      const apiUrl = (import.meta.env.VITE_API_URL || '/api').replace(/\/api\/?$/, '');
       
       if (!token) {
         setError('You are not logged in. Please login and try again.');
@@ -60,7 +60,7 @@ const InterviewRoom = () => {
   const markInterviewAsStarted = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/api\/?$/, '');
+      const apiUrl = (import.meta.env.VITE_API_URL || '/api').replace(/\/api\/?$/, '');
       
       await axios.post(
         `${apiUrl}/api/recruitment/interviews/${interviewId}/start/`,
@@ -130,3 +130,4 @@ const InterviewRoom = () => {
 };
 
 export default InterviewRoom;
+

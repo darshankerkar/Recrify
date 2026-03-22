@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../utils/api';
 import { getBranding } from '../utils/branding';
 
 /**
@@ -32,7 +32,7 @@ Your role:
 Keep responses brief (2-3 sentences unless more detail is requested).`;
 
   try {
-    const response = await axios.post('/api/chat', {
+    const response = await api.post('/recruitment/chat/', {
       message: userMessage,
       jobsContext: jobs,
       systemPrompt,
@@ -93,9 +93,9 @@ Resume:
 ${resumeText}`;
 
   try {
-    const response = await axios.post('/api/resume-analyzer', {
+    const response = await api.post('/recruitment/resume-analyzer/', {
       resumeText: prompt,
-    }, { timeout: 15000 });
+    }, { timeout: 60000 });
 
     const text = response.data?.analysis;
     if (!text || !text.trim()) {
@@ -108,3 +108,5 @@ ${resumeText}`;
     throw new Error('Failed to analyze resume with Gemini. Please try again.');
   }
 }
+
+
