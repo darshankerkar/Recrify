@@ -21,7 +21,7 @@ const InterviewsDashboard = () => {
   const fetchInterviews = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/api\/?$/, '');
+      const apiUrl = (import.meta.env.VITE_API_URL || '/api').replace(/\/api\/?$/, '');
       if (!token) { setError('You are not logged in. Please login and try again.'); setLoading(false); return; }
       
       const response = await axios.get(`${apiUrl}/api/recruitment/interviews/`, {
@@ -56,7 +56,7 @@ const InterviewsDashboard = () => {
   const handleViewAnalysis = async (interview) => {
     try {
       const token = localStorage.getItem('access_token');
-      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/api\/?$/, '');
+      const apiUrl = (import.meta.env.VITE_API_URL || '/api').replace(/\/api\/?$/, '');
       const response = await axios.get(`${apiUrl}/api/recruitment/interviews/${interview.id}/get_analysis/`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -71,7 +71,7 @@ const InterviewsDashboard = () => {
   const handleCompleteInterview = async (interviewId) => {
     try {
       const token = localStorage.getItem('access_token');
-      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/api\/?$/, '');
+      const apiUrl = (import.meta.env.VITE_API_URL || '/api').replace(/\/api\/?$/, '');
       await axios.post(`${apiUrl}/api/recruitment/interviews/${interviewId}/complete/`, {}, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -295,3 +295,4 @@ const InterviewsDashboard = () => {
 };
 
 export default InterviewsDashboard;
+
