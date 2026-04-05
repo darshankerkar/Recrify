@@ -1,101 +1,147 @@
-# HireDesk
+# Recrify
 
-HireDesk is a modern and easy-to-use job and hiring management platform. It helps recruiters post job openings and manage applications, while job seekers can explore opportunities and track their application status seamlessly.
+Recrify is an AI-powered hiring platform built to help recruiting teams move from sourcing to screening, interviews, and candidate management in one product experience. It combines recruiter workflows, candidate-facing tools, AI-assisted resume analysis, job discovery, and interview infrastructure into a single system.
 
-**Watch the HireDesk Demo Video**
-[![HireDesk Demo Video](https://img.youtube.com/vi/CIT34qZeYtQ/maxresdefault.jpg)](https://youtu.be/CIT34qZeYtQ)
+## Links
 
----
+- Live Preview: https://recrify.co
+- Demo Video: https://www.youtube.com/watch?v=nMn61d0CL9M
 
-## Overview
+## Product Overview
 
-HireDesk simplifies the recruitment process for both recruiters and applicants.
-* **Recruiters** can manage job postings and review applications efficiently.
-* **Applicants** can apply to jobs and monitor their progress in real time.
-The platform aims to make hiring transparent, organized, and accessible.
+Recrify is designed for two core user groups:
 
----
+- Recruiters who need to post jobs, manage candidate pipelines, score resumes, schedule interviews, and monitor hiring activity.
+- Candidates who need to discover roles, upload resumes, track applications, prepare for interviews, and receive AI-assisted resume feedback.
 
-## Features
+The platform focuses on speed, visibility, and operational clarity across the full hiring lifecycle.
 
-- **User Authentication** – Secure login for recruiters and applicants via JWT.
-- **Job Posting & Management** – Recruiters can create, update, and manage job listings.
-- **Job Application System** – Applicants can apply and track application status.
-- **Status Tracking** – View application progress (Applied, Shortlisted, Rejected).
-- **Responsive UI** – Works smoothly across desktop and mobile devices.
-- **Database Integration** – Secure storage of jobs and application data using PostgreSQL.
+## Key Features
 
----
+### Recruiter Workflows
+
+- Recruiter dashboard with hiring activity summaries and pipeline visibility
+- Job creation, listing management, and candidate review flows
+- Candidate profile views with structured resume information and downloadable resumes
+- Bulk candidate upload for processing multiple resumes in one workflow
+- Interview scheduling and recruiter interview management dashboards
+- Subscription and payments flow for Starter, Pro, and monitoring add-on packs
+- Monitoring credit purchases for interview monitoring capacity
+
+### Candidate Workflows
+
+- Candidate dashboard with jobs, activity, and interview visibility
+- Job discovery and role browsing through the candidate jobs experience
+- Resume upload flow for job applications and profile processing
+- Application tracking and job-specific apply journeys
+- Upcoming interview visibility and interview room access
+- AI-powered resume analyzer for role-based feedback and improvement suggestions
+
+### AI and Automation
+
+- Resume parsing and structured data extraction
+- AI resume analysis with practical improvement suggestions
+- Match and scoring-oriented resume processing flows
+- Embedded AI chat assistant for product and hiring guidance
+- Interview room support with monitoring and proctoring-oriented components
+
+### Platform Experience
+
+- Recruiter and candidate role-based experiences
+- Protected application routes and session-aware navigation
+- Google-auth interview join gate support
+- Payment success handling and account state updates
+- Pricing, privacy, refund, terms, and contact pages integrated into the product
+- Responsive interface built for desktop and browser-based workflows
+
+## Implemented Modules
+
+- Landing page and marketing experience
+- Recruiter dashboard
+- Candidate dashboard
+- Jobs management
+- Candidate jobs browsing
+- Resume upload
+- Bulk upload
+- Resume analyzer
+- Interviews dashboard
+- Interview room
+- Payment page and payment success flow
+- Legal and support pages
+- Chat assistant
 
 ## Tech Stack
 
-- **Frontend:** React + Vite
-- **UI Styling:** Tailwind CSS + Bootstrap
-- **Backend:** Django + Django REST Framework
-- **Database:** PostgreSQL (Neon)
-- **Authentication:** Firebase Auth
-- **Deployment:** Vercel (Frontend)
+### Frontend
 
----
+- React 19
+- Vite
+- React Router
+- Tailwind CSS
+- Framer Motion
+- Axios
+- React Hot Toast
+- React Dropzone
 
-## Installation & Setup
+### Authentication and Integrations
+
+- Firebase Authentication
+- Google Generative AI integration for AI-assisted experiences
+- Cashfree payment integration
+- Google reCAPTCHA integration
+
+### Interview and Monitoring Tooling
+
+- PeerJS
+- face-api.js
+
+### Backend and Data Layer
+
+- Django
+- Django REST Framework
+- PostgreSQL
+
+## Local Development
+
+### Frontend
 
 ```bash
-# Clone the repository
-git clone [https://github.com/](https://github.com/)<your-username>/hiredesk.git
-cd hiredesk
-
-# --- Frontend Setup ---
+cd frontend
 npm install
-npm run dev # Runs at http://localhost:5173
+npm run dev
+```
 
-# --- Backend Setup ---
+### Production Build
+
+```bash
+cd frontend
+npm run build
+```
+
+### Backend
+
+```bash
 cd backend
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py runserver # Runs at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+python manage.py runserver
 ```
 
----
+## Typical User Flow
 
-## User Guidelines
+- Sign up or log in as a recruiter or candidate
+- Recruiters create jobs, review applicants, and manage hiring workflows
+- Candidates browse roles, upload resumes, and apply to relevant jobs
+- AI services assist with resume analysis and candidate evaluation flows
+- Recruiters schedule interviews and candidates join interview rooms
+- Monitoring and add-on purchase flows extend interview management capacity
 
-* **Sign Up / Log In** – Create an account as a recruiter or applicant.
-* **Browse Jobs** – Explore available job opportunities.
-* **Post or Apply** – Recruiters post jobs; applicants apply to relevant roles.
-* **Track Status** – Monitor application progress in real time.
-* **Manage Listings** – Recruiters can review and manage applications easily.
+## Why Recrify
 
----
+Recrify is built to reduce fragmentation across hiring workflows. Instead of separating resume handling, job workflows, interview tooling, and AI feedback across multiple tools, the product brings them together in one coordinated platform.
 
-## Future Enhancements
+## Preview
 
-- [ ] Advanced job filtering and search.
-- [ ] Recruiter analytics dashboard.
-- [ ] Email notifications for application updates.
-- [ ] Role-based access control (RBAC).
-- [ ] Resume upload and management.
+Use the live deployment here:
 
----
-
-## Contributing
-
-Contributions are welcome! Follow these steps to contribute:
-
-1.  **Fork the Repository** to your own account.
-2.  **Clone Your Fork**:  
-    `git clone https://github.com/<your-username>/hiredesk.git`
-3.  **Create a New Branch**:  
-    `git checkout -b feature/your-feature-name`
-4.  **Commit & Push**:
-    ```bash
-    git add .
-    git commit -m "Brief description of changes"
-    git push origin feature/your-feature-name
-    ```
-5.  **Submit a Pull Request** via GitHub.
-
----
-
-## 🔗 Live Preview
-https://hire-desk.vercel.app
+https://recrify.co
