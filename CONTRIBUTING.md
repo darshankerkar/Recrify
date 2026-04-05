@@ -6,12 +6,13 @@ We welcome improvements that make the project more stable, useful, and maintaina
 
 ## Getting Started
 
-1. Fork the repository.
-2. Clone your fork locally.
-3. Create a new branch for your change.
-4. Make and test your changes.
-5. Commit with a clear message.
-6. Open a pull request with a concise explanation of what changed and why.
+1. Create an issue and discuss about your contributions.
+2. Fork the repository.
+3. Clone your fork locally.
+4. Create a new branch for your change.
+5. Make and test your changes.
+6. Commit with a clear message.
+7. Open a pull request with a concise explanation of what changed and why.
 
 ## Contribution Guidelines
 
