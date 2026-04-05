@@ -5,7 +5,7 @@ Recrify is an AI-powered hiring platform built to streamline the full recruitmen
 **Watch the Recrify Demo Video**  
 [![Recrify Demo Video](https://img.youtube.com/vi/nMn61d0CL9M/maxresdefault.jpg)](https://www.youtube.com/watch?v=nMn61d0CL9M)
 
----
+
 
 ## Overview
 
@@ -16,7 +16,7 @@ Recrify is built to support two sides of the hiring process:
 
 The platform focuses on fast execution, role-based access, AI-assisted hiring workflows, and a more organized candidate pipeline.
 
----
+
 
 ## Features
 
@@ -36,7 +36,7 @@ The platform focuses on fast execution, role-based access, AI-assisted hiring wo
 - **Legal & Support Pages** - Privacy, refund, terms, pricing, and contact pages are integrated into the application.
 - **Responsive Interface** - Built for modern desktop and browser-first workflows with a polished UI experience.
 
----
+
 
 ## Tech Stack
 
@@ -52,7 +52,7 @@ The platform focuses on fast execution, role-based access, AI-assisted hiring wo
 - **Interview / Realtime Tooling:** PeerJS + face-api.js
 - **Utilities:** React Hot Toast, React Dropzone, Google reCAPTCHA
 
----
+
 
 ## Installation & Setup
 
@@ -73,7 +73,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
----
+
 
 ## User Guidelines
 
@@ -89,7 +89,7 @@ python manage.py runserver
 * **Use Monitoring Add-Ons** - Recruiters can purchase monitoring packs and extend interview monitoring capacity.
 * **Access Plans & Payments** - Recruiters can subscribe to plans and manage paid platform access.
 
----
+
 
 ## Future Enhancements
 
@@ -99,7 +99,7 @@ python manage.py runserver
 - [ ] Stronger workflow automation across hiring stages.
 - [ ] Additional enterprise-ready controls for team-based recruiter operations.
 
----
+
 
 ## Contributing
 
@@ -114,8 +114,9 @@ Contributions are welcome. If you want to improve Recrify:
    `git commit -m "Brief description of changes"`
 5. **Push your branch and open a pull request**
 
----
+
 
 ## Live Preview
 
 https://recrify.co
+
