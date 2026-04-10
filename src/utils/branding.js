@@ -23,10 +23,10 @@ const brands = {
     tagline: 'AI-powered recruitment software.',
     description: 'Recrify is a subscription-based recruitment software.',
     pageTitle: 'Recrify - AI Hiring Intelligence Platform',
-    logo: '/recrify-favicon.svg',
-    favicon: '/recrify-favicon.svg',
-    supportEmail: 'recridy@gmail.com',
-    contactEmail: 'recridy@gmail.com',
+    logo: '/recrify-logo-final.png',
+    favicon: '/recrify-logo-final.png',
+    supportEmail: 'recrify@gmail.com',
+    contactEmail: 'recrify@gmail.com',
     copyright: `(c) ${new Date().getFullYear()} Recrify. All rights reserved.`,
     disclaimer: 'Recrify is an AI-powered recruitment software. We do not provide direct job placement services.',
   },
@@ -45,3 +45,4 @@ export function getBranding() {
 }
 
 export default getBranding;
+
