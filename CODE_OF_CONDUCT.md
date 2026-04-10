@@ -24,7 +24,7 @@ Recrify is committed to providing a respectful, inclusive, and constructive envi
 
 If you experience or witness behavior that violates this Code of Conduct, report it privately at:
 
-**recridy@gmail.com**
+**recrify@gmail.com**
 
 All reports will be reviewed in good faith and handled as responsibly and confidentially as possible.
 

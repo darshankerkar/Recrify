@@ -6,7 +6,7 @@ If you discover a security vulnerability in Recrify, please report it privately 
 
 Send reports to:
 
-**recridy@gmail.com**
+**recrify@gmail.com**
 
 ## What to Include
 
