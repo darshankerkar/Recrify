@@ -390,6 +390,7 @@ export default function ContactUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
           className="mt-12 p-6 rounded-2xl border border-white/8 bg-white/[0.02] text-center"
+          data-brand="recrify-contact"
         >
           <p className="text-gray-400 text-sm">
             <strong className="text-white">{brand.appName}</strong> — AI-Powered Recruitment Automation SaaS Platform.
