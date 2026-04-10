@@ -141,7 +141,7 @@ export default function SignUpModal({ isOpen, onClose, preselectedRole = null })
       localStorage.setItem('userData', JSON.stringify(newUserData));
 
       if (responseData.email_sent === false) {
-        setError('Verification code could not be sent right now. Please contact recridy@gmail.com.');
+        setError('Verification code could not be sent right now. Please contact recrify@gmail.com.');
         return;
       }
 
